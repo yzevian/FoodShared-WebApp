@@ -1,0 +1,34 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="row">
+        <div col-lg-12 col-md-12 col-sm-12>
+            <h1 style="text-align:center;">Edit <%=c_food.name %></h1>
+            <div style="width:30%; margin:25px auto;">
+                <form action="/c_food/<%=c_food._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="c_food[name]">Name</label>
+                        <input class="form-control" type="text" name="c_food[name]" value="<%= c_food.name %>">
+                    </div>
+                    <div class="form-group"> 
+                        <label for="image">New Image (Leave empty if not updating)</label>
+                        <input type="file" id="image" name="image" accept="image/*" >
+                    </div>
+                    <div class="form-group">
+                        <label for="c_food[description">Description</label>
+                        <input class="form-control" type="text" name="c_food[description]" value="<%= c_food.description%>">
+                    </div>
+                    <div class="form-group"> 
+                        <label for="c_food[price">Price</label>
+                        <input class="form-control" type="number" name="c_food[price]" value="<%= c_food.price%>">
+                    </div>
+                    <div class="form-group"> 
+                   <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                    </div>
+                </form>
+                <a href="/c_food/<%=c_food._id %>" class="btn btn-xs btn-warning" >Go Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

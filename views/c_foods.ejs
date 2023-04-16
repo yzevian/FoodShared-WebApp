@@ -1,0 +1,31 @@
+<% include partials/header %>
+
+<div class="container">
+    <header class="jumbotron" id="mainHeader">
+        <div class="container" >
+            <h1>Welcome To the ultimate Japanese Food Blog!</h1>
+            <p>View the best Japanese food recommended by locals and travellers</p>
+            <p>
+             <a  class="btn btn-primary btn-lg" href="views/c_food/new">Add a new post</a>   
+            </p>
+        </div>
+    </header>
+    
+        <div class="row" style="display:flex; flex-wrap: wrap">
+            <% c_food.forEach(function(c_food){%>
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="thumbnail">
+                         <img src="<%= c_food.image %>">
+                         <div class="caption">
+                            <h4><%= c_food.name %></h4>
+                         </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+</div>
+
+<% include partials/footer %>
+
+
+
